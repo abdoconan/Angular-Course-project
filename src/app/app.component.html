@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (navegateShoppingList)="updateExposeShoppingList($event)"></app-header>
 <div class="container mt-3">
   <div class="row">
     <div class="md-col-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="!exposeShoppingList"></app-recipes>
+      <app-shopping-list *ngIf="exposeShoppingList"></app-shopping-list>
     </div>
   </div>
 </div>

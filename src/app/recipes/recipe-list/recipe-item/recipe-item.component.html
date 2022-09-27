@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<a href="#" class="list-group-item list-group-item-action clearfix">
+    <div class="float-end">
+        <h4 class="list-group-item-header">{{ recipe.name }}</h4>
+        <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+    <span class="float-start">
+        <img [src]="recipe.imageUrl" [alt]="recipe.name" class="img-fluid img-thumbnail my-1" style="max-height: 70px;">
+    </span>
+</a>

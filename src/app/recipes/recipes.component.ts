@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Recipe } from './recipe.model'
+
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesComponent implements OnInit {
 
-  constructor() { }
+  detailRecipeElement: Recipe;
+
+  constructor() {
+    this.detailRecipeElement = new Recipe('', '', '');
+   }
 
   ngOnInit(): void {
+  }
+
+  getDetailsRecepie(recipe: Recipe) {
+    this.detailRecipeElement = recipe;
   }
 
 }

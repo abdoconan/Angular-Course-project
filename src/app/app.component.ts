@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+  exposeShoppingList =  false;
+
+  updateExposeShoppingList(event:boolean): void {
+    this.exposeShoppingList = event
+  }
 }
