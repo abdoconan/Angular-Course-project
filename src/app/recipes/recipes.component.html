@@ -3,12 +3,14 @@
         <app-recipe-list ></app-recipe-list>
     </div>
     <div class="col-md-7">
-        <app-recipe-detail *ngIf="detailRecipeElement.name !== ''; else NoSelectionOfRecipe"></app-recipe-detail>
+        <router-outlet></router-outlet>
+        
+    </div>
+</div>
+
+<!-- <app-recipe-detail *ngIf="detailRecipeElement.name !== ''; else NoSelectionOfRecipe"></app-recipe-detail>
         <ng-template #NoSelectionOfRecipe>
             <p class="text-danger">
                 please select a recipe!
             </p>
-        </ng-template>
-        
-    </div>
-</div>
+        </ng-template> -->

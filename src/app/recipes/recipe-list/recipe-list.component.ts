@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import  { Recipe } from '../recipe.model'
 
@@ -11,7 +12,7 @@ export class RecipeListComponent implements OnInit {
   recipes : Recipe[] = [];
   // @Output('detailsRecepie') returnedRecipe = new EventEmitter();
 
-  constructor(private recipeService: RecipeService) { 
+  constructor(private recipeService: RecipeService, private router: Router,private route: ActivatedRoute) { 
   }
 
   ngOnInit(): void {
@@ -23,6 +24,10 @@ export class RecipeListComponent implements OnInit {
       this.recipes[index]
     );
     // this.returnedRecipe.emit(this.recipes[index]);
+  }
+
+  navegateToForm() {
+    this.router.navigate(['form'], {relativeTo: this.route})
   }
 
 }
