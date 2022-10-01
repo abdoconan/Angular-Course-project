@@ -11,7 +11,7 @@ export class RecipeItemComponent implements OnInit {
   @Input('recivedRecipe') recipe: Recipe;
 
   constructor() {
-    this.recipe = new Recipe('', '', '');
+    this.recipe = new Recipe('', '', '', []);
    }
 
   ngOnInit(): void {
