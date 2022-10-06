@@ -20,7 +20,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   getDetailsRecepie(index: number) {
-    this.recipeService.selectedRecipe.emit(
+    this.recipeService.selectedRecipe.next(
       this.recipes[index]
     );
     // this.returnedRecipe.emit(this.recipes[index]);

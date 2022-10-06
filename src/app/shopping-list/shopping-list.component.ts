@@ -11,6 +11,7 @@ import { Ingredient } from '../shared/ingredient.model'
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private _ingredientServiceSubscription: Subscription = new Subscription();
+  // private _selectedIngredient: Subscription = new Subscription();
 
   constructor(private ingredientService: IngredientService) {
     this.ingredients = [];
@@ -28,8 +29,13 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   getNewIngredient(event: Ingredient){
     this.ingredientService.addNewIngredient(event);
   }
+  selectIngredient(index: number){
+    this.ingredientService.selectedIngredient.next(index)
+  }
+
   ngOnDestroy() {
     this._ingredientServiceSubscription.unsubscribe();
+    // this._selectedIngredient.unsubscribe();
 
   }
 

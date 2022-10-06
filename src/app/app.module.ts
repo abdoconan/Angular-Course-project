@@ -14,6 +14,7 @@ import { RecipeService } from './services/recipe.service';
 import { IngredientService } from './services/ingredients.service';
 import { AppRouterModule } from './app-router.module';
 import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { RecipeFormComponent } from './recipes/recipe-form/recipe-form.component
   ],
   imports: [
     BrowserModule, 
-    AppRouterModule
+    AppRouterModule, 
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [RecipeService, IngredientService],
   bootstrap: [AppComponent]

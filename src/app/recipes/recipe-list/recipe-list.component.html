@@ -9,11 +9,9 @@
 <div class="row">
     <div class="col-xs-12">
         <ul class="list-group mt-2" style=" list-style-type: none;">
-            <app-recipe-item *ngFor="let recipe of recipes; let x= index" [recivedRecipe]="recipe" (click)="getDetailsRecepie(x)">
+            <app-recipe-item *ngFor="let recipe of recipes; let x= index" [recivedRecipe]="recipe" [recipeIndex]="x" (click)="getDetailsRecepie(x)">
             </app-recipe-item>
         </ul>
-        
-        
     </div>
 </div>
 

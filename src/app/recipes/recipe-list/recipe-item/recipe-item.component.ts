@@ -9,6 +9,7 @@ import {Recipe } from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
 
   @Input('recivedRecipe') recipe: Recipe;
+  @Input('recipeIndex') index: number;
 
   constructor() {
     this.recipe = new Recipe('', '', '', []);

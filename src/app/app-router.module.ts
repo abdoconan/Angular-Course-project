@@ -15,11 +15,15 @@ const appRoutes: Routes = [
         component: RecipesComponent,
         children: [
             {
-                path:"details", 
+                path:":id/details", 
                 component: RecipeDetailComponent
             },
             {
                 path:"form", 
+                component: RecipeFormComponent
+            },
+            {
+                path:":id/form/edit", 
                 component: RecipeFormComponent
             },
         ]

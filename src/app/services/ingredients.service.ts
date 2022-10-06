@@ -10,14 +10,36 @@ export class IngredientService {
         new Ingredient('Banana', 2)
       ];
     addIngredient:Subject<Ingredient[]> = new Subject();
-
+    selectedIngredient: Subject<number> = new Subject();
     getIngredients() {
         return this.ingredients.slice();
     }
 
+    getSelectedIngredient(index:number):Ingredient {
+        return this.getIngredients()[index];
+    }
+
     addNewIngredient(ingredient:Ingredient){
-        this.ingredients.push(ingredient);
-        this.addIngredient.next(this.ingredients);
+        ingredient.name = ingredient.name[0].toUpperCase() + ingredient.name.substring(1).toLowerCase();
+        let existingElement =  this.ingredients.find(
+            (elment) => {
+                return elment.name === ingredient.name
+            }
+        )
+        if(existingElement){
+            existingElement.amount +=  ingredient.amount;
+        }
+        else{
+            this.ingredients.push(ingredient);
+        }
+        this.ingredients =  this.ingredients.filter(
+            (elment)=>{
+                return elment.amount> 0;
+            }
+        );
+        this.addIngredient.next(this.getIngredients());
+
+        
     }
     
 }
